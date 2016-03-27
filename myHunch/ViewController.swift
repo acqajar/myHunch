@@ -21,12 +21,23 @@ class ViewController: UIViewController {
     
     var count = 0
     
+    @IBOutlet var timerLabel: UILabel!
+    
+    var gameTimer: NSTimer!
 
     
+    var counter = 0
+    
+    
+    
     @IBAction func getResp(sender: AnyObject) {
+        
         if(userInput == "" && userInput.text == ""){
             return postResp.text = " NO DONT! "
         }
+        
+        
+        
         
         
         var total : Int
@@ -85,6 +96,38 @@ class ViewController: UIViewController {
         
     }
     
+    
+    
+    
+    
+    
+    
+    
+    func runTimedCode() {
+        timerLabel.text = String(counter++)
+        if (timerLabel.text == "10"){
+    
+        postResp.text = "You are Drumpf."
+        num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+        num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+        
+        solveThis.text = "\(num1) * \(num2)"
+
+        gameTimer.invalidate()
+        counter = 0
+        timerLabel.text = String(counter)
+    
+    
+        } else {
+            return
+        }
+
+    }
+    
+    
+    
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -93,6 +136,13 @@ class ViewController: UIViewController {
         
         
         solveThis.text = "\(num1) * \(num2)"
+        
+        
+        
+        
+        gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.runTimedCode), userInfo: nil, repeats: true)
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
