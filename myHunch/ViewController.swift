@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet var postResp: UILabel!
     @IBOutlet var solveThis: UILabel!
     
+    @IBOutlet var gameScore: UILabel!
+    
+    var count = 0
     
 
     
@@ -43,10 +46,31 @@ class ViewController: UIViewController {
                 num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
                 total = num1 * num2
                 print(total)
+                
+                count+=1
+                print(count)
+                
+                gameScore.text = String(count)
+                
+                
+                
                 solveThis.text = "\(num1) * \(num2)"
                 return
             } else {
                 postResp.text = "Dumbassss"
+                
+                if(count > 0){
+                    count-=1
+                    gameScore.text = String(count)
+                } else {
+                    return
+                }
+//                gameScore.text = String(count)
+                
+                num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+                num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+                total = num1 * num2
+                solveThis.text = "\(num1) * \(num2)"
                 return
             }
             
