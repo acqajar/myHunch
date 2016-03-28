@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
-    var num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
-    var num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+    var num1 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
+    var num2 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
     
     
     @IBOutlet var userInput: UITextField!
@@ -56,8 +56,8 @@ class ViewController: UIViewController {
         if(userInput != "" && userInput.text != ""){
             if(Int(userInput.text!)! == total) {
                 postResp.text = "You Rock"
-                num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
-                num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+                num1 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
+                num2 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
                 total = num1 * num2
                 print(total)
                 
@@ -94,8 +94,8 @@ class ViewController: UIViewController {
                 
 //                gameScore.text = String(count)
                 
-                num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
-                num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+                num1 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
+                num2 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
                 total = num1 * num2
                 solveThis.text = "\(num1) * \(num2)"
                 
@@ -139,8 +139,8 @@ class ViewController: UIViewController {
         if (timerLabel.text == "10"){
     
         postResp.text = "You are Drumpf."
-        num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
-        num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+        num1 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
+        num2 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
         
         solveThis.text = "\(num1) * \(num2)"
 
@@ -165,8 +165,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-         num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
-         num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
+         num1 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
+         num2 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
         
         
         solveThis.text = "\(num1) * \(num2)"
@@ -186,6 +186,23 @@ class ViewController: UIViewController {
 
 
 }
+
+
+
+
+//GENERATING A RANDOM NUMBER
+//
+//Int(arc4random_uniform(9))) generates a random number between 0-(n-1) or 0-8.
+
+
+
+
+
+
+
+
+
+
 
 
 //        postResp.text = " "
