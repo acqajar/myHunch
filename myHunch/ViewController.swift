@@ -30,6 +30,9 @@ class ViewController: UIViewController {
     
     
     
+    
+    
+    
     @IBAction func getResp(sender: AnyObject) {
         
         if(userInput == "" && userInput.text == ""){
@@ -66,22 +69,41 @@ class ViewController: UIViewController {
                 
                 
                 solveThis.text = "\(num1) * \(num2)"
+                
+                
+                startTimer()
+                
+                
+                
+                
+                
+                
+                
+                
                 return
             } else {
                 postResp.text = "Dumbassss"
                 
                 if(count > 0){
+                    startTimer()
                     count-=1
                     gameScore.text = String(count)
                 } else {
                     return
                 }
+                
 //                gameScore.text = String(count)
                 
                 num1 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
                 num2 = Int(arc4random_uniform(6)) + Int(arc4random_uniform(6))
                 total = num1 * num2
                 solveThis.text = "\(num1) * \(num2)"
+                
+                
+                
+                
+                startTimer()
+                
                 return
             }
             
@@ -97,6 +119,12 @@ class ViewController: UIViewController {
     }
     
     
+    func startTimer(){
+        
+        gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.runTimedCode), userInfo: nil, repeats: true)
+        counter=0
+        
+    }
     
     
     func runTimedCode() {
@@ -105,6 +133,9 @@ class ViewController: UIViewController {
         timerLabel.text = String(counter)
 //        let a = counter+1
 //        timerLabel.text = String(a)
+        
+        
+        
         if (timerLabel.text == "10"){
     
         postResp.text = "You are Drumpf."
@@ -116,10 +147,12 @@ class ViewController: UIViewController {
         gameTimer.invalidate()
         counter = 0
         timerLabel.text = String(counter)
-    
+        
+            
     
         } else {
             return
+            
         }
 
     }
@@ -138,9 +171,9 @@ class ViewController: UIViewController {
         solveThis.text = "\(num1) * \(num2)"
         
         
+        startTimer()
         
-        
-        gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.runTimedCode), userInfo: nil, repeats: true)
+//        gameTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: #selector(ViewController.runTimedCode), userInfo: nil, repeats: true)
         
         
     }
