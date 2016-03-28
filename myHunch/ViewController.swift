@@ -99,12 +99,12 @@ class ViewController: UIViewController {
     
     
     
-    
-    
-    
-    
     func runTimedCode() {
-        timerLabel.text = String(counter++)
+        counter = counter+1
+        
+        timerLabel.text = String(counter)
+//        let a = counter+1
+//        timerLabel.text = String(a)
         if (timerLabel.text == "10"){
     
         postResp.text = "You are Drumpf."
