@@ -144,11 +144,12 @@ class ViewController: UIViewController {
         
         solveThis.text = "\(num1) * \(num2)"
 
-        gameTimer.invalidate()
-        counter = 0
+//        gameTimer.invalidate()
+//        counter = 0
+            
         timerLabel.text = String(counter)
         
-            
+            startTimer()
     
         } else {
             return
