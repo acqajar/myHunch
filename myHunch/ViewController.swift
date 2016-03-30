@@ -40,12 +40,8 @@ class ViewController: UIViewController {
         }
         
         
-        
-        
-        
         var total : Int
 
-    
         
         total = num1 * num2
 
@@ -54,7 +50,7 @@ class ViewController: UIViewController {
         
         
         if(userInput != "" && userInput.text != ""){
-            if(Int(userInput.text!)! == total) {
+            if(userInput.text == String(total)) {
                 postResp.text = "You Rock"
                 num1 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
                 num2 = Int(arc4random_uniform(9)) + Int(arc4random_uniform(9))
@@ -74,12 +70,7 @@ class ViewController: UIViewController {
                 startTimer()
                 
                 
-                
-                
-                
-                
-                
-                
+
                 return
             } else {
                 postResp.text = "Dumbassss"
@@ -99,9 +90,7 @@ class ViewController: UIViewController {
                 total = num1 * num2
                 solveThis.text = "\(num1) * \(num2)"
                 
-                
-                
-                
+ 
                 startTimer()
                 
                 return
